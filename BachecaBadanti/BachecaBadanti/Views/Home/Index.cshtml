@@ -4,15 +4,18 @@
     ViewBag.Title = "Home Page";
 }
 
+@using (Html.BeginForm("index","Annuncis",FormMethod.Get))
+{
 <div class="jumbotron">
     <h1>Bacheca Badanti</h1>
     <p class="lead">Portale di annunci riservato alla richiesta e offerta di colf e badanti</p>
    
-
+    Seleziona Provincia 
    @Html.DropDownListFor(m => m.Selezione, Model.CityList)
-   <p>@Html.ActionLink("Cerca", "index", "annuncis", new object { }, new { @class = "btn btn-primary btn-lg" })</p> 
-   
+   @*<p>@Html.ActionLink("Cerca", "index", "annuncis", new { city = 0 }, new { @class = "btn btn-primary btn-lg" })</p>*@ 
+    <input type="submit" value="Cerca" />
 </div>
+}
 
 <div class="row">
     <div class="col-md-4">

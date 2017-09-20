@@ -16,11 +16,11 @@ namespace BachecaBadanti.Controllers
         private bakecaEntities db = new bakecaEntities();
 
         // GET: Annuncis
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Index(string selezione)
         {
 
             var query = await (from p in db.Annunci
-                               where p.Phone != null
+                               where p.Phone != null && p.City.Contains(selezione)
                                orderby p.DataOra descending
                                select p).Take(200).ToListAsync();
 
@@ -29,6 +29,11 @@ namespace BachecaBadanti.Controllers
             //return View(await db.Annunci.OrderByDescending(p => p.DataOra).ToListAsync());
             return View(query);
         }
+
+       
+
+
+
 
         // GET: Annuncis/Details/5
         public async Task<ActionResult> Details(int? id)
