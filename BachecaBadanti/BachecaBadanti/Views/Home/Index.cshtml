@@ -1,10 +1,15 @@
-﻿@{
+﻿@model  BachecaBadanti.Controllers.ItalianCity
+
+@{
     ViewBag.Title = "Home Page";
 }
 
 <div class="jumbotron">
     <h1>Bacheca Badanti</h1>
     <p class="lead">Portale di annunci riservato alla richiesta e offerta di colf e badanti</p>
+   
+
+   @Html.DropDownListFor(m => m.Selezione, Model.CityList)
    <p>@Html.ActionLink("Cerca", "index", "annuncis", new object { }, new { @class = "btn btn-primary btn-lg" })</p> 
    
 </div>
