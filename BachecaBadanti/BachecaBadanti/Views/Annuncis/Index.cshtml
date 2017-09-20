@@ -1,0 +1,29 @@
+﻿@model IEnumerable<BachecaBadanti.Annunci>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Annunci in tutta Italia</h2>
+
+
+    @Html.DisplayNameFor(model => model.Email)
+@foreach (var item in Model)
+{
+
+
+    <div class="row">
+        <div class="col-md-4">
+            foto
+
+        </div>
+        <div class="col-md-8">
+            <h2>@Html.DisplayFor(modelItem => item.Titolo)</h2>
+            <h3>@Html.DisplayFor(modelItem => item.DataOra) - @Html.DisplayFor(modelItem => item.Location)</h3>
+            <p>@Html.DisplayFor(modelItem => item.Descrizione)</p>
+            <div style="text-align:right"><h3>@Html.DisplayFor(modelItem => item.Phone)</h3></div>
+
+        </div>
+    </div>
+              
+                }
