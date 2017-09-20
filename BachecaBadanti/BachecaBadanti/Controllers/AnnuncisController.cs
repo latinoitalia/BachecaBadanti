@@ -25,6 +25,7 @@ namespace BachecaBadanti.Controllers
                                select p).Take(200).ToListAsync();
 
             ViewBag.Total = query.Count();
+            ViewBag.City = selezione;
 
             //return View(await db.Annunci.OrderByDescending(p => p.DataOra).ToListAsync());
             return View(query);
