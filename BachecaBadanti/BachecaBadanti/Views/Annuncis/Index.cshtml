@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Annunci in tutta Italia</h2>
+<h2>Totale @ViewBag.Total Annunci in tutta Italia</h2>
 
 
     @Html.DisplayNameFor(model => model.Email)
@@ -19,7 +19,7 @@
         </div>
         <div class="col-md-9">
             <h2>@Html.DisplayFor(modelItem => item.Titolo)</h2>
-            <h3>@Html.DisplayFor(modelItem => item.DataOra) - @Html.DisplayFor(modelItem => item.Location)</h3>
+            <h3>@item.DataOra.Value.ToShortDateString() - @Html.DisplayFor(modelItem => item.Location)</h3>
             <p>@Html.DisplayFor(modelItem => item.Descrizione)</p>
             <div style="text-align:right"><h3>@Html.DisplayFor(modelItem => item.Phone)</h3></div>
 

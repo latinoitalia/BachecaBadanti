@@ -18,7 +18,16 @@ namespace BachecaBadanti.Controllers
         // GET: Annuncis
         public async Task<ActionResult> Index()
         {
-            return View(await db.Annunci.ToListAsync());
+
+            var query = await (from p in db.Annunci
+                               where p.Phone != null
+                               orderby p.DataOra descending
+                               select p).Take(200).ToListAsync();
+
+            ViewBag.Total = query.Count();
+
+            //return View(await db.Annunci.OrderByDescending(p => p.DataOra).ToListAsync());
+            return View(query);
         }
 
         // GET: Annuncis/Details/5
