@@ -19,13 +19,21 @@ namespace BachecaBadanti.Controllers
         public async Task<ActionResult> Index(string selezione)
         {
 
+            string city = selezione;
+            if (string.IsNullOrEmpty(selezione))
+            {
+                selezione = "";
+                city = "tutta Italia";
+            }
+               
+
             var query = await (from p in db.Annunci
                                where p.Phone != null && p.City.Contains(selezione)
                                orderby p.DataOra descending
                                select p).Take(200).ToListAsync();
 
             ViewBag.Total = query.Count();
-            ViewBag.City = selezione;
+            ViewBag.City = city;
 
             //return View(await db.Annunci.OrderByDescending(p => p.DataOra).ToListAsync());
             return View(query);
