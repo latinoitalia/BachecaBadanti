@@ -20,7 +20,7 @@
             <h2>@Html.DisplayFor(modelItem => item.Titolo)</h2>
             <h3>@item.DataOra.Value.ToShortDateString() - @Html.DisplayFor(modelItem => item.Location)</h3>
             <p>@Html.DisplayFor(modelItem => item.Descrizione)</p>
-            <div style="text-align:right"><h3>@Html.DisplayFor(modelItem => item.Phone)</h3></div>
+            <div style="text-align:right"><h3> <a href="@item.Link" target="_blank">Subito.it</a></h3></div>
 
         </div>
     </div>
