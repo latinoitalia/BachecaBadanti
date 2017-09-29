@@ -183,6 +183,7 @@
       <DependentUpon>Bacheca.edmx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AnnuncisController.cs" />
+    <Compile Include="Controllers\AnnuncisgestController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -262,6 +263,11 @@
     <Content Include="Views\Annuncis\Details.cshtml" />
     <Content Include="Views\Annuncis\Edit.cshtml" />
     <Content Include="Views\Annuncis\Index.cshtml" />
+    <Content Include="Views\Annuncisgest\Create.cshtml" />
+    <Content Include="Views\Annuncisgest\Delete.cshtml" />
+    <Content Include="Views\Annuncisgest\Details.cshtml" />
+    <Content Include="Views\Annuncisgest\Edit.cshtml" />
+    <Content Include="Views\Annuncisgest\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
